@@ -35,8 +35,20 @@ class BAc2:
         if amount > 0:
             self.loan += amount
             print('A loan of {:s} {:.2f} is set up.'.format(self.currency, amount))
+            print('The current loan is {:s} {:.2f}.'.format(self.currency, self.loan))
         else:
-            print('Invalid loan amount of {:s}{:d}'.format(self.currency, amount))
+            print('Invalid loan amount of {:s}{:d}.'.format(self.currency, amount))
+
+    def retLoan(self, amount):
+        if amount <= 0:
+            print('Invalid return-loan amount of {:s}{:d}.'.format(self.currency, amount))
+        elif amount > self.balance:
+            print('Insufficient funds.')
+        else:
+            self.loan -= amount
+            self.balance -= amount
+            print('A loan of {:s}{:.2f} is returned.'.format(self.currency, amount))
+            print('The current loan is {:s} {:.2f}.'.format(self.currency, self.loan))
 
 
 
