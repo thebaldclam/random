@@ -26,9 +26,6 @@ class BankAccount:
         else:
             print('Invalid withdrawal amount: ', amount)
 
-    def check_balance(self):
-        """ Print a statement of the account balance. """
-        print('The balance of account number {:d} is {:s}{:.2f}'.format(self.account_number, self.currency, self.balance))
 
 
     
