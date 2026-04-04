@@ -1,6 +1,6 @@
 class BankAccount:
     """ A base class representing a bank account."""
-    currency = 'HKD'
+    currency = "HKD"
 
     def __init__(self, customer, account_number, balance=0):
         "Initialize the BankAccount class with a customer, account number and opening balance (which defaults to 0.)"
@@ -13,18 +13,18 @@ class BankAccount:
         if amount > 0:
             self.balance += amount
         else:
-            print('Invalid deposit amount: ', amount)
+            print("Invalid deposit amount: ", amount)
     
     def withdraw(self, amount):
         """Withdraw amount from the bank account, ensuring
         there are sufficient funds."""
         if amount > 0:
             if amount > self.balance:
-                print('Insufficient funds')
+                print("Insufficient funds")
             else:
                 self.balance -= amount
         else:
-            print('Invalid withdrawal amount: ', amount)
+            print("Invalid withdrawal amount: ", amount)
 
 
 

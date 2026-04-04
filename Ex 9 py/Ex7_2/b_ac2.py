@@ -1,6 +1,6 @@
 class BAc2:
     """ A base class representing a bank account."""
-    currency = 'HKD'
+    currency = "HKD"
 
     def __init__(self, customer, account_number, balance = 0, loan = 0):
         "Initialize the BankAccount class with a customer, account number and opening balance (which defaults to 0.)"
@@ -14,41 +14,41 @@ class BAc2:
         if amount > 0:
             self.balance += amount
         else:
-            print('Invalid deposit amount: ', amount)
+            print("Invalid deposit amount: ", amount)
     
     def withdraw(self, amount):
         """Withdraw amount from the bank account, ensuring
         there are sufficient funds."""
         if amount > 0:
             if amount > self.balance:
-                print('Insufficient funds')
+                print("Insufficient funds")
             else:
                 self.balance -= amount
         else:
-            print('Invalid withdrawal amount: ', amount)
+            print("Invalid withdrawal amount: ", amount)
 
     def check_balance(self):
         """ Print a statement of the account balance. """
-        print('The balance of account number {:d} is {:s}{:.2f}'.format(self.account_number, self.currency, self.balance))
+        print("The balance of account number {:d} is {:s}{:.2f}".format(self.account_number, self.currency, self.balance))
 
     def setLoan(self, amount):
         if amount > 0:
             self.loan += amount
-            print('A loan of {:s} {:.2f} is set up.'.format(self.currency, amount))
-            print('The current loan is {:s} {:.2f}.'.format(self.currency, self.loan))
+            print("A loan of {:s} {:.2f} is set up.".format(self.currency, amount))
+            print("The current loan is {:s} {:.2f}.".format(self.currency, self.loan))
         else:
-            print('Invalid loan amount of {:s}{:d}.'.format(self.currency, amount))
+            print("Invalid loan amount of {:s}{:d}.".format(self.currency, amount))
 
     def retLoan(self, amount):
         if amount <= 0:
-            print('Invalid return-loan amount of {:s}{:d}.'.format(self.currency, amount))
+            print("Invalid return-loan amount of {:s}{:d}.".format(self.currency, amount))
         elif amount > self.balance:
-            print('Insufficient funds.')
+            print("Insufficient funds.")
         else:
             self.loan -= amount
             self.balance -= amount
-            print('A loan of {:s}{:.2f} is returned.'.format(self.currency, amount))
-            print('The current loan is {:s} {:.2f}.'.format(self.currency, self.loan))
+            print("A loan of {:s}{:.2f} is returned.".format(self.currency, amount))
+            print("The current loan is {:s} {:.2f}.".format(self.currency, self.loan))
 
 
 
